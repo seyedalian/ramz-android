@@ -4,7 +4,7 @@ import android.content.Context
 import java.io.*
 
 
-class ShareReference {
+class sharedPreferences {
 
     //writeFileOnInternalStorage -----------------------------------------------------------------writeFileOnInternalStorage
      fun writeFileOnInternalStorage(mcoContext: Context, sFileName: String, sBody: String) {
