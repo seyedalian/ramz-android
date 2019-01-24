@@ -66,4 +66,12 @@ class ShareReference {
         }
         return true
     }
+    fun deleteFile(mcoContext: Context,FileName: String):Boolean{
+        val file = File(mcoContext.filesDir, "sssa")
+        val gpxfile = File(file, FileName)
+        if(gpxfile.exists()){
+           return gpxfile.delete()
+        }
+        return false
+    }
 }
