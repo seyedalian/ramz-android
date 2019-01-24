@@ -9,7 +9,7 @@ import java.util.regex.Pattern
 
 
 class MainActivity : AppCompatActivity() {
-
+    var points =0
     lateinit var ramzsaz:TextView
     lateinit var testRamz:TextView
     lateinit var rahnama:TextView
@@ -46,52 +46,42 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+    fun checkPower(input: String){
 
+    }
     fun checkHaveNum(input: String):Boolean {
-        val KV_REGEX = "([1-9])"
-        val KV_PATTERN = Pattern.compile(KV_REGEX)
+        for(i in 0 .. input.length ){
+            if( '0'<= input[i] && input[i]<='9'){
+                return true
+            }
 
-        val matcher = KV_PATTERN.matcher(input)
-
-
-
-        while (matcher.find()) {
-           return true
         }
         return false
     }
     fun checkHaveSmall(input: String):Boolean {
-        val KV_REGEX = "([a-z])"
-        val KV_PATTERN = Pattern.compile(KV_REGEX)
+        for(i in 0 .. input.length ){
+            if( 'a'<= input[i] && input[i]<='z'){
+                return true
+            }
 
-        val matcher = KV_PATTERN.matcher(input)
-
-
-
-        while (matcher.find()) {
-            return true
         }
         return false
     }
     fun checkHaveCap(input: String):Boolean {
-        val KV_REGEX = "([A-Z])"
-        val KV_PATTERN = Pattern.compile(KV_REGEX)
+        for(i in 0 .. input.length ){
+            if( 'A'<= input[i] && input[i]<='Z'){
+                return true
+            }
 
-        val matcher = KV_PATTERN.matcher(input)
-
-
-
-        while (matcher.find()) {
-            return true
         }
         return false
     }
     fun checkHaveAtherCaracter(input: String):Boolean {
         for(i in 0 .. input.length ){
-            if( input[i]<= 32.toChar() && input[i]<=47.toChar() ||
-                input[i]<= 58.toChar() && input[i]<=64.toChar() ||
-                input[i]<= 91.toChar() && input[i]<=96.toChar() ||
-                input[i]<= 123.toChar() && input[i]<=126.toChar()){
+            if( 32.toChar()<=input[i]  && input[i]<=47.toChar() ||
+                58.toChar()<=input[i] && input[i]<=64.toChar() ||
+                91.toChar()<= input[i]  && input[i]<=96.toChar() ||
+                123.toChar()<=input[i] && input[i]<=126.toChar()){
                 return true
             }
 
