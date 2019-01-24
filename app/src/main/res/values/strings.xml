@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ramz</string>
+
+    <string name="rahnama">راهنما</string>
+    <string name="ramzsaz">رمزساز</string>
+    <string name="testRamz">تست قدرت رمز</string>
+
 </resources>
