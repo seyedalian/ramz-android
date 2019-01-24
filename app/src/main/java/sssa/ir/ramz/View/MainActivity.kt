@@ -1,11 +1,10 @@
-package sssa.ir.ramz
+package sssa.ir.ramz.View
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
-import android.view.animation.AlphaAnimation
-import java.util.regex.Pattern
+import sssa.ir.ramz.R
 
 
 class MainActivity : AppCompatActivity() {
@@ -36,13 +35,13 @@ class MainActivity : AppCompatActivity() {
 
     }
     fun onClick(v:View){
-        if(v.id==R.id.ramzsaz){
+        if(v.id== R.id.ramzsaz){
 
         }
-        if(v.id==R.id.testRamz){
+        if(v.id== R.id.testRamz){
 
         }
-        if(v.id==R.id.rahnama){
+        if(v.id== R.id.rahnama){
 
         }
     }
