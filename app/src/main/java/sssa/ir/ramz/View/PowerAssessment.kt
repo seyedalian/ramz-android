@@ -12,6 +12,7 @@ import sssa.ir.ramz.R
 
 class PowerAssessment : AppCompatActivity() {
     var points =0
+
     lateinit var note:TextView;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
