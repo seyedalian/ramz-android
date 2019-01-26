@@ -1,6 +1,5 @@
 package sssa.ir.ramz.View
 
-import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -9,6 +8,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import sssa.ir.ramz.R
+
 
 class PowerAssessment : AppCompatActivity() {
     var points =0
@@ -36,6 +36,13 @@ class PowerAssessment : AppCompatActivity() {
             }
         })
     }
+
+    private fun getStringResourceByName(aString: String): String {
+        val packageName = packageName
+        val resId = resources.getIdentifier(aString, "string", packageName)
+        return getString(resId)
+    }
+
     fun checkPower(input: String):String{
         points =0
         var mNote:String=""
@@ -43,40 +50,48 @@ class PowerAssessment : AppCompatActivity() {
             if(checkHaveNum(input)){
                 points+=25
             }else{
-                mNote+="فاقد عدد\n"
+                mNote+=getStringResourceByName("missingNumber")
+                mNote+="\n"
             }
 
             if(checkHaveSmall(input)){
                 points+=25
             }else{
-                mNote+="فاقد حرف کوچک\n"
+                mNote+=getStringResourceByName("noLowercaseLetters")
+                mNote+="\n"
             }
             if(checkHaveCap(input)){
                 points+=25
             }else{
-                mNote+="فاقد حرف بزرگ\n"
+                mNote+=getStringResourceByName("noCapitalLetters")
+                mNote+="\n"
             }
-            if(checkHaveAtherCaracter(input)){
+            if(checkHaveOtherCharacter(input)){
                 points+=25
             }else{
-                mNote+="فاقد کاراکتر های غیرحرفی وغیر عدد\n"
+                mNote+=getStringResourceByName("noOtherCharacter")
+                mNote+="\n"
             }
             if(checkHaveContinuousWord(input)){
                 if((points>=25))
                     points-=25
-                mNote+="مشکل حروف پشت سر هم کیبور یا اعداد پشت سر هم یا حروف پشت سر هم در الفبا\n"
+                mNote+=getStringResourceByName("haveContinuousWord")
+                mNote+="\n"
             }
         }else{
-            mNote="طول رمز کمتر از 8رقم است.\n"
+            mNote+=getStringResourceByName("lessThan8")
+            mNote+="\n"
 
         }
         if (checkHaveSame(input)){
             if((points>=25))
                 points-=25
-            mNote +="دارای کاراکتر های مشابه پشت سرهم \n "
+            mNote+=getStringResourceByName("haveSame")
+            mNote+="\n"
         }
         if(points ==100){
-            mNote="رمز قوی!"
+            mNote+=getStringResourceByName("strong")
+            mNote+="\n"
 
         }
       return mNote
@@ -116,7 +131,7 @@ class PowerAssessment : AppCompatActivity() {
         }
         return false
     }
-    fun checkHaveAtherCaracter(input: String):Boolean {
+    fun checkHaveOtherCharacter(input: String):Boolean {
         for(i in 0 until input.length ){
             if( 32.toChar()<=input[i]  && input[i]<=47.toChar() ||
                 58.toChar()<=input[i] && input[i]<=64.toChar() ||

@@ -4,5 +4,15 @@
     <string name="rahnama">راهنما</string>
     <string name="ramzsaz">رمزساز</string>
     <string name="testRamz">تست قدرت رمز</string>
-
+    
+    <string name="makeAPass">رمز بساز!</string>
+    
+    <string name="missingNumber">فاقد عدد</string>
+   <string name="noLowercaseLetters">فاقد حرف کوچک</string>
+    <string name="noCapitalLetters">فاقد حرف بزرگ</string>
+    <string name="noOtherCharacter">فاقد کاراکتر های غیرحرفی وغیر عدد</string>
+    <string name="haveContinuousWord">مشکل حروف پشت سر هم کیبور یا اعداد پشت سر هم یا حروف پشت سر هم در الفبا</string>
+    <string name="lessThan8">طول رمز کمتر از 8رقم است.</string>
+    <string name="haveSame">دارای کاراکتر های مشابه پشت سرهم</string>
+    <string name="strong">رمز قوی!!</string>
 </resources>
